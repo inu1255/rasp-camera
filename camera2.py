@@ -75,7 +75,8 @@ class Camera(object):
     def begin(self, image):
         now = time.time()
         if not self.mp4:
-            self.mp4 = cv2.VideoWriter('tmp.mp4', cv2.cv.CV_FOURCC('M', 'J', 'P', 'G'), self.fps, self.size)
+            # 'M', 'J', 'P', 'G'
+            self.mp4 = cv2.VideoWriter('tmp.avi', cv2.cv.CV_FOURCC("D", "I", "B", " "), self.fps, self.size)
             self.begin_record_at = now
         self.record(image,now)
         self.last_record_at = now
@@ -100,8 +101,8 @@ class Camera(object):
             if not os.path.exists(d):
                 os.mkdir(d)
             filename = "%s/%s-%s.mp4" % (d,fb,fe)
-            if os.path.exists("tmp.mp4"):
-                os.rename("tmp.mp4",filename)
+            if os.path.exists("tmp.avi"):
+                os.rename("tmp.avi",filename)
                 print "成功 %s" % filename
             else:
                 print "失败 %s" % filename
