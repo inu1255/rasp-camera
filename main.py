@@ -2,7 +2,12 @@
 # coding=utf-8
 
 import cv2
-from camera import Camera
+import platform
+
+if platform.system()=="Linux":
+    from camera1 import Camera
+else:
+    from camera import Camera
 
 camera = cv2.VideoCapture(0) # 参数0表示第一个摄像头
 # 判断视频是否打开
