@@ -5,7 +5,7 @@ import cv2
 import platform
 
 if platform.system()=="Linux":
-    from camera1 import Camera
+    from camera2 import Camera
 else:
     from camera import Camera
 
