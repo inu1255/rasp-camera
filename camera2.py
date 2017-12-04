@@ -99,8 +99,11 @@ class Camera(object):
             if not os.path.exists(d):
                 os.mkdir(d)
             filename = "%s/%s-%s.mp4" % (d,fb,fe)
-            os.rename("tmp.mp4",filename)
-            print "save %s" % filenames
+            if os.path.exists("tmp.mp4"):
+                os.rename("tmp.mp4",filename)
+                print "成功 %s" % filenames
+            else:
+                print "失败 %s" % filenames
         self.record(image,now)            
 
     def saveJpg(self, image):
