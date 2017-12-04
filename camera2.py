@@ -83,7 +83,7 @@ class Camera(object):
         if self.mp4:
             t = time.localtime(now)
             s = time.strftime('%Y-%m-%d %H:%M:%S',t)
-            cv.PutText(image, s, (30,30), font, (255,0,0))
+            cv.PutText(image, s, (30,30), self.font, (255,0,0))
             self.mp4.write(image)
 
     def stop(self, image):
