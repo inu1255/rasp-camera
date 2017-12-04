@@ -74,7 +74,7 @@ class Camera(object):
     def begin(self, image):
         now = time.time()
         if not self.mp4:
-            self.mp4 = scv2.VideoWriter('tmp.mp4', cv2.cv.CV_FOURCC('M', 'J', 'P', 'G'), self.fps, self.size)
+            self.mp4 = cv2.VideoWriter('tmp.mp4', cv2.cv.CV_FOURCC('M', 'J', 'P', 'G'), self.fps, self.size)
             self.begin_record_at = now
         self.record(image,now)
         self.last_record_at = now
