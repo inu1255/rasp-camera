@@ -83,6 +83,7 @@ class Camera(object):
         if self.mp4:
             t = time.localtime(now)
             s = time.strftime('%Y-%m-%d %H:%M:%S',t)
+            image = cv.fromarray(image)
             cv.PutText(image, s, (30,30), self.font, (255,0,0))
             self.mp4.write(image)
 
