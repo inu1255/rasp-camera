@@ -19,6 +19,7 @@ class Camera(object):
             os.mkdir(self.image_path)
         self.camera = camera
         self.fps = camera.get(cv2.cv.CV_CAP_PROP_FPS) 
+        self.fps = self.fps if self.fps > 0 else 15
         self.size = (int(camera.get(cv2.cv.CV_CAP_PROP_FRAME_WIDTH)), int(camera.get(cv2.cv.CV_CAP_PROP_FRAME_HEIGHT))) 
         print('fps:'+repr(self.fps)+' size:'+repr(self.size))
         
