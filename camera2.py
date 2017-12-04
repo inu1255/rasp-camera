@@ -85,7 +85,7 @@ class Camera(object):
             s = time.strftime('%Y-%m-%d %H:%M:%S',t)
             image = cv.fromarray(image)
             cv.PutText(image, s, (30,30), self.font, (255,0,0))
-            self.mp4.write(image)
+            self.mp4.write(np.asarray(image))
 
     def stop(self, image):
         now = time.time()
