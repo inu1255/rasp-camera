@@ -76,6 +76,7 @@ class Camera(object):
         now = time.time()
         if not self.mp4:
             # 'M', 'J', 'P', 'G'
+            print 'begin record'
             self.mp4 = cv2.VideoWriter('tmp.avi', cv2.cv.CV_FOURCC("D", "I", "B", " "), self.fps, self.size)
             self.begin_record_at = now
         self.record(image,now)
