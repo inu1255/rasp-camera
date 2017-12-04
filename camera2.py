@@ -19,7 +19,7 @@ class Camera(object):
             os.mkdir(self.image_path)
         self.camera = camera
         self.fps = camera.get(cv2.cv.CV_CAP_PROP_FPS) 
-        self.fps = self.fps if self.fps > 0 else 15
+        self.fps = self.fps if self.fps > 0 else 5
         self.size = (int(camera.get(cv2.cv.CV_CAP_PROP_FRAME_WIDTH)), int(camera.get(cv2.cv.CV_CAP_PROP_FRAME_HEIGHT))) 
         print('fps:'+repr(self.fps)+' size:'+repr(self.size))
         
@@ -100,7 +100,7 @@ class Camera(object):
             fe = time.strftime('%H%M%S',time.localtime(now))
             if not os.path.exists(d):
                 os.mkdir(d)
-            filename = "%s/%s-%s.mp4" % (d,fb,fe)
+            filename = "%s/%s-%s.avi" % (d,fb,fe)
             if os.path.exists("tmp.avi"):
                 os.rename("tmp.avi",filename)
                 print "成功 %s" % filename
