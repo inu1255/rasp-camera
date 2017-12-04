@@ -101,9 +101,9 @@ class Camera(object):
             filename = "%s/%s-%s.mp4" % (d,fb,fe)
             if os.path.exists("tmp.mp4"):
                 os.rename("tmp.mp4",filename)
-                print "成功 %s" % filenames
+                print "成功 %s" % filename
             else:
-                print "失败 %s" % filenames
+                print "失败 %s" % filename
         self.record(image,now)            
 
     def saveJpg(self, image):
